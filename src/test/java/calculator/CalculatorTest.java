@@ -11,4 +11,9 @@ public class CalculatorTest
         Calculator calc = new Calculator();
         assertEquals(0, calc.add(""));
     }
+    @Test
+    public void testSingleNumberReturnsValue() {
+        Calculator calc = new Calculator();
+        assertEquals(1, calc.add("1"));
+    }
 }
