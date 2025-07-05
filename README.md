@@ -32,7 +32,7 @@
         Example: <code>"//;\n1;2" → 3</code>
     </li>
     <br>
-    <li><strong>Reject Invalid Input (e.g. "1,\n")(This is commented)</strong><br>
+    <li><strong>Reject Invalid Input (e.g. "1,\n")</strong><br>
         Example: <code>"1,\n"</code> throws <code>IllegalArgumentException</code>
     </li>
     <br>
