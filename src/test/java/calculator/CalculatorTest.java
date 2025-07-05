@@ -57,5 +57,16 @@ public class CalculatorTest
         Calculator calc = new Calculator();
         assertEquals(6, calc.add("//[***]\n1***2***3"));
     }
+    @Test
+    public void testMultipleDelimiters() {
+        Calculator calc = new Calculator();
+        assertEquals(6, calc.add("//[*][%]\n1*2%3"));
+    }
+
+    @Test
+    public void testMultipleLongDelimiters() {
+        Calculator calc = new Calculator();
+        assertEquals(10, calc.add("//[***][%%]\n1***2%%3***4"));
+    }
 
 }
