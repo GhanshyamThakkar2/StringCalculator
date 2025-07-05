@@ -16,4 +16,10 @@ public class CalculatorTest
         Calculator calc = new Calculator();
         assertEquals(1, calc.add("1"));
     }
+    @Test
+    public void testTwoNumbersCommaSeparated() {
+        Calculator calc = new Calculator();
+        assertEquals(3, calc.add("1,2"));
+    }
+
 }
