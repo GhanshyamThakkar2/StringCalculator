@@ -20,6 +20,12 @@ public class Calculator {
             numbers = parts[1];
         }
 
+        // 🚩 Validation for invalid input like "1,\n"
+        if (numbers.contains(",\n") || numbers.contains("\n,"))
+        {
+            throw new IllegalArgumentException("Invalid input: Delimiter followed by a newline or empty value.");
+        }
+
         String[] numArray = numbers.split(delimiter);
         int sum = 0;
         List<Integer> negatives = new ArrayList<>();
@@ -37,16 +43,19 @@ public class Calculator {
             {
                 negatives.add(num);
             }
-            else
+            else if (num <= 1000) // 🚀 Ignore numbers greater than 1000
             {
                 sum += num;
             }
         }
+
         if (!negatives.isEmpty())
         {
             String negativeList = negatives.toString().replace("[", "").replace("]", "");
-            throw new IllegalArgumentException("negative numbers not allowed " + negativeList);
+            throw new IllegalArgumentException("Negative numbers not allowed: " + negativeList);
         }
+
         return sum;
     }
+
 }

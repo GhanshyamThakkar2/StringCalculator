@@ -46,4 +46,10 @@ public class CalculatorTest
         Calculator calc = new Calculator();
         calc.add("1,-2,3");
     }
+    @Test
+    public void testNumbersGreaterThanThousandAreIgnored() {
+        Calculator calc = new Calculator();
+        assertEquals(2, calc.add("2,1001"));
+        assertEquals(1002, calc.add("2,1000")); // 1000 is allowed
+    }
 }
