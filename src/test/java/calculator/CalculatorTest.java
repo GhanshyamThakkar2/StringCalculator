@@ -22,6 +22,11 @@ public class CalculatorTest
         assertEquals(3, calc.add("1,2"));
     }
     @Test
+    public void testMultipleNumbersReturnsSum() {
+        Calculator calc = new Calculator();
+        assertEquals(15, calc.add("1,2,3,4,5"));
+    }
+    @Test
     public void testNewlineAsSeparator() {
         Calculator calc = new Calculator();
         assertEquals(6, calc.add("1\n2,3"));
