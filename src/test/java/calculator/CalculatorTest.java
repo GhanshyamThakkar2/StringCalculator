@@ -31,6 +31,11 @@ public class CalculatorTest
         Calculator calc = new Calculator();
         assertEquals(6, calc.add("1\n2,3"));
     }
+//    @Test(expected = IllegalArgumentException.class)
+//    public void testInvalidDelimiterSequenceThrowsException() {
+//        Calculator calc = new Calculator();
+//        calc.add("1,\n");  // This should trigger the validation and throw an exception
+//    }
     @Test
     public void testCustomDelimiter() {
         Calculator calc = new Calculator();
