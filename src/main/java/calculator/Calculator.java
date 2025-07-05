@@ -6,6 +6,10 @@ import java.util.List;
 public class Calculator
 {
     public int add(String numbers) {
-        return 0; // placeholder
+        if (numbers.isEmpty())
+        {
+            return 0;
+        }
+        return 0;
     }
 }
