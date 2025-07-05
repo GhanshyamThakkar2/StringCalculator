@@ -52,4 +52,10 @@ public class CalculatorTest
         assertEquals(2, calc.add("2,1001"));
         assertEquals(1002, calc.add("2,1000")); // 1000 is allowed
     }
+    @Test
+    public void testMultiCharacterDelimiter() {
+        Calculator calc = new Calculator();
+        assertEquals(6, calc.add("//[***]\n1***2***3"));
+    }
+
 }
