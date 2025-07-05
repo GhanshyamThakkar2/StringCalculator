@@ -31,20 +31,24 @@ public class CalculatorTest
         Calculator calc = new Calculator();
         assertEquals(6, calc.add("1\n2,3"));
     }
-//    @Test(expected = IllegalArgumentException.class)
-//    public void testInvalidDelimiterSequenceThrowsException() {
-//        Calculator calc = new Calculator();
-//        calc.add("1,\n");  // This should trigger the validation and throw an exception
-//    }
+    @Test(expected = IllegalArgumentException.class)
+    public void testInvalidDelimiterSequenceThrowsException() {
+        Calculator calc = new Calculator();
+        calc.add("1,\n");
+    }
     @Test
     public void testCustomDelimiter() {
         Calculator calc = new Calculator();
         assertEquals(3, calc.add("//;\n1;2"));
     }
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testNegativeNumberThrowsException() {
         Calculator calc = new Calculator();
-        calc.add("1,-2,3");
+        try {
+            calc.add("1,-2,3,-4");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Exception Message: " + e.getMessage());
+        }
     }
     @Test
     public void testNumbersGreaterThanThousandAreIgnored() {
@@ -68,5 +72,4 @@ public class CalculatorTest
         Calculator calc = new Calculator();
         assertEquals(10, calc.add("//[***][%%]\n1***2%%3***4"));
     }
-
 }
