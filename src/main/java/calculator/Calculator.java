@@ -7,16 +7,14 @@ public class Calculator
         {
             return 0;
         }
-        if (numbers.contains(","))
+        //String numbers = "1,2\n3,4";
+        //numArray will be ["1", "2", "3", "4"]
+        String[] numArray = numbers.split(",|\n");
+        int sum = 0;
+        for (String numStr : numArray)
         {
-            String[] numArray = numbers.split(",");
-            int sum = 0;
-            for (String numStr : numArray)
-            {
-                sum += Integer.parseInt(numStr.trim());
-            }
-            return sum;
+            sum += Integer.parseInt(numStr.trim());
         }
-        return Integer.parseInt(numbers);
+        return sum;
     }
 }

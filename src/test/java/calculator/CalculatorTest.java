@@ -21,5 +21,9 @@ public class CalculatorTest
         Calculator calc = new Calculator();
         assertEquals(3, calc.add("1,2"));
     }
-
+    @Test
+    public void testNewlineAsSeparator() {
+        Calculator calc = new Calculator();
+        assertEquals(6, calc.add("1\n2,3"));
+    }
 }
